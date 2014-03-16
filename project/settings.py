@@ -222,6 +222,7 @@ INSTALLED_APPS = (
     'app6_template_tools',
     'app7_static_files',
     'app8_base',
+    'blog1_post_ajax_multiple_values',
 
     # ignore this, it's the app to display the listing of other apps
     'ignore_me',

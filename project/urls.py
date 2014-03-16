@@ -8,7 +8,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
 
     # this display the admin on the url /admin/
     url(r'^admin/', include(admin.site.urls)),
@@ -26,6 +27,8 @@ urlpatterns = patterns('',
     url(r'^app6/', include('app6_template_tools.urls')),
     url(r'^app7/', include('app7_static_files.urls')),
     url(r'^app8/', include('app8_base.urls')),
+
+    url(r'^blog1/', include('blog1_post_ajax_multiple_values.urls')),
 
     # ignore this, it's the page of the project listing all the apps
     url(r'^$', include('ignore_me.urls')),
