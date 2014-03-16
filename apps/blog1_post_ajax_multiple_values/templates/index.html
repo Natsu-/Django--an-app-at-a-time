@@ -11,7 +11,7 @@
 <p>Multiple form</p>
 
 <form method="POST" action="{{request.get_full_path}}">
-    {% csrf_token %}
+
     <select multiple="multiple" name="params">
         <option value="1">Value 1</option>
         <option value="2">Value 2</option>
@@ -27,21 +27,37 @@
         <div class="title">
             <h2>jQuery serialize()</h2>
         </div>
-        <div class="raw-body">
-            <span>Raw body : </span><span class="result"></span>
-        </div>
-        <div class="getlist">
-            <span>request.GET.get_list('params') : </<span><span class="result"></span>
-        </div>
-
-        <div class="get">
-            <span>request.GET.get('params') : </<span><span class="result"></span>
-        </div>
-
-        <div class="get-paramlist">
-            <span>request.GET.get('params[]') : </<span><span class="result"></span>
-        </div>
+        {% include "results.html" %}
     </div>
+
+    <div class="method_calls" id="raw-array">
+        <div class="title">
+            <h2>Raw array</h2>
+        </div>
+        {% include "results.html" %}
+    </div>
+
+    <div class="method_calls" id="serialize-jquery-manual">
+        <div class="title">
+            <h2>Manual jQuery serialize() format</h2>
+        </div>
+        {% include "results.html" %}
+    </div>
+
+    <div class="method_calls" id="json-data">
+        <div class="title">
+            <h2>JSON data</h2>
+        </div>
+        {% include "results.html" %}
+    </div>
+
+    <div class="method_calls" id="ajax-traditional">
+        <div class="title">
+            <h2>Ajax traditional settings</h2>
+        </div>
+        {% include "results.html" %}
+    </div>
+
 </div>
 
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
