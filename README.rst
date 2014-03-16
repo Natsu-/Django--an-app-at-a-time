@@ -2,6 +2,13 @@
 Django, an app at a time
 *******************************
 
+Intro
+==================
+This is a fork of excellent "Django, an app at a time" from Sam&Max (http://sametmax.com/)
+I wanted to use it to illustrate each blog post I will do, related to Django,
+to clearly understand the meaning of technical explanations. There will be a 
+"blogX_Y" app for each of these posts. 
+
 How to use?
 ==================
 
