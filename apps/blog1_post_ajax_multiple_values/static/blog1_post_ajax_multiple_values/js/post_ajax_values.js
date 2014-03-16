@@ -1,4 +1,15 @@
 
+function postWithValues(urlToPost, selector, values) {
+
+    $.post(urlToPost, values, function(data) {
+        $(selector).find('.raw-body .result').text(data['raw_body']);
+        $(selector).find('.getlist .result').html(data['getlist']);
+        $(selector).find('.get .result').html(data['get']);
+        $(selector).find('.get-paramlist .result').html(data['get_paramlist']);
+    });
+}
+
+
 $(document).ready(function() {
 
     $('form').on('submit', function(event) {
@@ -8,14 +19,7 @@ $(document).ready(function() {
         // Doing serialize on form values
         
         var values = $(this).serialize();
-        $.post(urlToPost, values, function(data) {
-            
-            $('#serialize-jquery .getlist .result').html(data['getlist']);
-            $('#serialize-jquery .get .result').html(data['get']);
-            console.log(data);
-            console.log(data['get_paramlist']);
-            $('#serialize-jquery .get-paramlist .result').html(data['get_paramlist']);
-        });
+        postWithValues(urlToPost, '#serialize-jquery', values);
 
     });
 });
